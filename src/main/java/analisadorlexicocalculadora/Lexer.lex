@@ -12,8 +12,8 @@ private void print_value(String lexema, String descricao) {
 %}
 %%
 "//".*      {/*Ignore*/}
-[0-9]     { print_value(yytext(), "NÚMERO"); }
-[0-9]*     { print_value(yytext(), "NÚMERO"); }
+\s.*		{/*Ignore*/}
+[-]?[0-9]+  { print_value(yytext(), "NÚMERO"); }
 "+" 		{ print_value(yytext(), "SOMA"); }
 "-" 		{ print_value(yytext(), "SUBTRAÇÃO"); }
 "*" 		{ print_value(yytext(), "MULTIPLICAÇÃO"); }
