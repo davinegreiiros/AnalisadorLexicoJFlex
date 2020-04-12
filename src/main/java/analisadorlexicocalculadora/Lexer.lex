@@ -18,9 +18,9 @@ private void print_value(String lexema, String descricao) {
 "-" 		{ print_value(yytext(), "SUBTRAÇÃO"); }
 "*" 		{ print_value(yytext(), "MULTIPLICAÇÃO"); }
 "/" 		{ print_value(yytext(), "DIVISÃO"); }
-"**"        { print_value(yytext(), "PARENTESES"); }
-"(" 		{ print_value(yytext(), "PARENTESES"); }
-")" 		{ print_value(yytext(), "PARENTESES"); }
+"**"        { print_value(yytext(), "POTENCIAÇÃO"); }
+"(" 		{ print_value(yytext(), "PARENTESES ESQUERDO"); }
+")" 		{ print_value(yytext(), "PARENTESES DIREITO"); }
 [-+]?("[0-9]")*[.] ("[0-9]")+ {print_value(yytext(), "REAL");}
 [-+]?("[0-9]")+ {print_value(yytext(), "INTEIRO");}
 . {return ERROR;}
